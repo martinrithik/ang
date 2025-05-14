@@ -1,0 +1,28 @@
+@if(!annua) {
+    <p class="center red">Can you enter some values brother...</p>
+}
+@else {
+    <table>
+<thead>
+    <tr>
+        <th>Year</th>
+        <th>Invesstment Value</th>
+        <th>Interrest</th>
+        <th>Total Interest</th>
+        <th>Invested Capital</th>
+    </tr>
+</thead>
+
+<tbody>
+    @for(r of annua; track r.year){
+     <tr>
+        <td>{{r.year}}</td>
+        <td>{{r.valueEndOfYear | currency}}$</td>
+        <td>{{r.interest | currency}}</td>
+        <td>{{r.totalInterest | currency}}</td>
+        <td>{{r.totalAmountInvested | currency}}</td>
+     </tr>
+    }
+</tbody>
+</table>
+}
